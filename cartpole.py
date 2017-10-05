@@ -58,7 +58,7 @@ for episode in range(num_episodes):
     for t in range(max_number_of_steps):
         env.render()    # 更新并渲染游戏画面
         observation, reward, done, info = env.step(action)  # 获取本次行动的反馈结果
-        # 对致命错误行动进行极大力度的惩罚，让模型恨恨地吸收教训
+        # 对致命错误行动进行极大力度的惩罚，让模型恨恨地吸取教训
         if done:
             reward = -200
         action, state = get_action(state, action, observation, reward, episode)  # 作出下一次行动的决策
